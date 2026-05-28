@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Logo from './Logo.jsx'
 import { I } from './Icons.jsx'
 
 const NAV_LINKS = [
@@ -23,7 +22,12 @@ export default function Nav({ cartCount, onOpenCart, activeSection }) {
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-inner">
-        <Logo />
+        <div className="nav-brand">
+          <a href="#" aria-label="Ir al inicio">
+            <img src="/logos/los-equipos-no-text.png" alt="Logo" className="nav-logo" />
+          </a>
+          <span className="nav-brand-text">Los Equipos E.L</span>
+        </div>
         <div className="nav-links">
           {NAV_LINKS.map(l => (
             <a key={l.id} href={`#${l.id}`} className={`nav-link ${activeSection === l.id ? 'active' : ''}`}>
