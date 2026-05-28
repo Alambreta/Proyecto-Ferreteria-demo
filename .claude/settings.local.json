@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(eza C:\\\\Users\\\\miPC\\\\Documents\\\\Proyecto-Ferreteria --all --tree --level=2)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\miPC\\\\Documents\\\\Proyecto-Ferreteria\" -Force)",
+      "Bash(Select-Object Name, Attributes)",
+      "Bash(git ls-tree *)",
+      "Bash(git rebase *)",
+      "Bash(git stash *)"
+    ]
+  }
+}
