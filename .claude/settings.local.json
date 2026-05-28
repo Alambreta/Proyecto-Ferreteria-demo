@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(Start-Sleep -Seconds 3)",
+      "Bash(Get-Content \"C:\\\\Users\\\\miPC\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-miPC-Documents-Proyecto-Ferreteria\\\\3b830527-2a98-4d47-aec4-8c2edfd15bd8\\\\tasks\\\\bpjjt3avr.output\")"
+    ]
+  }
+}
