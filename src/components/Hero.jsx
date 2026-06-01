@@ -9,7 +9,7 @@ export default function Hero() {
         <I.blueprint style={{ width: '100%', height: '100%' }} />
       </div>
       <div className="hero-inner">
-        <div className="hero-tag">EST. 1997 · MONTERREY, N.L.</div>
+        <div className="hero-tag">EST. 1997 · CALI, COLOMBIA</div>
         <h1 className="h-display">
           CONSTRUIMOS<br />
           CON <span className="accent">FIERRO</span><br />

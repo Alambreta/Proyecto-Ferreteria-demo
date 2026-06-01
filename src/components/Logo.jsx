@@ -5,7 +5,7 @@ export default function Logo() {
     <div className="logo">
       <div className="logo-mark"><I.hardhat /></div>
       <div className="logo-name">
-        FORJA
+        Los Equipos E.L<br />
         <span>Materiales · Renta</span>
       </div>
     </div>

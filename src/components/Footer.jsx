@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="footer-inner">
         <div className="f-brand">
           <Logo />
-          <p>Materiales de construcción y renta de equipo para obra residencial, comercial e industrial. Operando en Monterrey y su área metropolitana desde 1997.</p>
+          <p>Materiales de construcción y renta de equipo para obra residencial, comercial e industrial. Operando en Cali y su área metropolitana desde 1997.</p>
           <div className="f-cert">
             <span>ISO 9001</span>
             <span>NOM-006-STPS</span>
@@ -38,15 +38,15 @@ export default function Footer() {
         <div className="f-col">
           <h5>Contacto</h5>
           <ul className="f-contact">
-            <li><I.pin /><span>Av. Constitución 4520<br />Col. Industrial, Monterrey</span></li>
-            <li><I.phone /><span>+52 81 1234 5678</span></li>
+            <li><I.pin /><span>Cali, Colombia<br /></span></li>
+            <li><I.phone /><span>+57 312 850 2364</span></li>
             <li><I.whatsapp /><span>WhatsApp 24/7</span></li>
-            <li><I.mail /><span>obra@forja.mx</span></li>
+            <li><I.mail /><span>losequipose.l@gmail.com</span></li>
           </ul>
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© 2026 FORJA Materiales S.A. de C.V.</span>
+        <span>© 2026 Los Equipos E.L</span>
         <div className="legal">
           <a href="#">Aviso de Privacidad</a>
           <a href="#">Términos</a>

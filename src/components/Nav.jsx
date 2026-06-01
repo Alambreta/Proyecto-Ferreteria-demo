@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { I } from './Icons.jsx'
 
 const NAV_LINKS = [
-  { id: 'compras',   label: 'Compras' },
-  { id: 'renta',     label: 'Renta' },
-  { id: 'servicios', label: 'Servicios' },
-  { id: 'cobertura', label: 'Cobertura' },
-  { id: 'contacto',  label: 'Contacto' },
+  { id: 'compras',   label: 'Compras',   to: '/compras' },
+  { id: 'renta',     label: 'Renta',     to: '/renta' },
+  { id: 'servicios', label: 'Servicios', href: '#servicios' },
+  { id: 'quienes-somos', label: 'Quienes Somos', to: '/quienes-somos' },
+  { id: 'contacto',  label: 'Contacto',  href: '#contacto' },
 ]
 
 export default function Nav({ cartCount, onOpenCart, activeSection }) {
@@ -23,21 +24,21 @@ export default function Nav({ cartCount, onOpenCart, activeSection }) {
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-inner">
         <div className="nav-brand">
-          <a href="#" aria-label="Ir al inicio">
+          <Link to="/" aria-label="Ir al inicio">
             <img src="/logos/los-equipos-no-text.png" alt="Logo" className="nav-logo" />
-          </a>
+          </Link>
           <span className="nav-brand-text">Los Equipos E.L</span>
         </div>
         <div className="nav-links">
-          {NAV_LINKS.map(l => (
-            <a key={l.id} href={`#${l.id}`} className={`nav-link ${activeSection === l.id ? 'active' : ''}`}>
-              {l.label}
-            </a>
-          ))}
+          {NAV_LINKS.map(l =>
+            l.to
+              ? <Link key={l.id} to={l.to} className={`nav-link ${activeSection === l.id ? 'active' : ''}`}>{l.label}</Link>
+              : <a key={l.id} href={l.href} className={`nav-link ${activeSection === l.id ? 'active' : ''}`}>{l.label}</a>
+          )}
         </div>
         <div className="nav-right">
           <a className="nav-wa" href="#contacto">
-            <I.whatsapp /> <span>+52 81 1234 5678</span>
+            <I.whatsapp /> <span>CONSULTA AHORA!</span>
           </a>
           <button className="cart-btn" onClick={onOpenCart} aria-label="Abrir carrito">
             <I.cart />

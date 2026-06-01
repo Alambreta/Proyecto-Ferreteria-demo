@@ -1,22 +1,33 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import DiagonalCut from './components/DiagonalCut.jsx'
-import Catalog from './components/Catalog.jsx'
-import Stripe from './components/Stripe.jsx'
+import FeaturedSection from './components/FeaturedSection.jsx'
 import Drawer from './components/Drawer.jsx'
 import Footer from './components/Footer.jsx'
-import { COMPRAS, RENTA, CATS_C, CATS_R } from './data/products.js'
+import ComprasPage from './pages/ComprasPage.jsx'
+import RentaPage from './pages/RentaPage.jsx'
+import QuienesSomosPage from './pages/QuienesSomosPage.jsx'
+import { COMPRAS, RENTA } from './data/products.js'
 
 const SECTION_IDS = ['compras', 'renta', 'servicios', 'cobertura', 'contacto']
 
 export default function App() {
+  const location = useLocation()
   const [cartOpen, setCartOpen] = useState(false)
   const [items, setItems] = useState([
     { ...COMPRAS[0], qty: 20, kind: 'compra' },
     { ...RENTA[0],   qty: 2,  kind: 'renta' },
   ])
-  const [active, setActive] = useState('compras')
+  const [scrollActive, setScrollActive] = useState('compras')
+
+  const routeActive = location.pathname === '/compras' ? 'compras'
+    : location.pathname === '/renta' ? 'renta'
+    : location.pathname === '/quienes-somos' ? 'quienes-somos'
+    : null
+
+  const active = routeActive ?? scrollActive
 
   const cartCount = items.reduce((s, i) => s + i.qty, 0)
 
@@ -36,6 +47,7 @@ export default function App() {
   }
 
   useEffect(() => {
+    if (location.pathname !== '/') return
     const onScroll = () => {
       const y = window.scrollY + 120
       let cur = 'compras'
@@ -43,45 +55,33 @@ export default function App() {
         const el = document.getElementById(id)
         if (el && el.offsetTop <= y) cur = id
       })
-      setActive(cur)
+      setScrollActive(cur)
     }
     window.addEventListener('scroll', onScroll)
     onScroll()
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [location.pathname])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
 
   return (
     <>
       <Nav cartCount={cartCount} onOpenCart={() => setCartOpen(true)} activeSection={active} />
-      <Hero />
-      <DiagonalCut from="#1A1A1A" to="#FFFFFF" />
-
-      <Catalog
-        id="compras"
-        kicker="01 / Catálogo"
-        title="COMPRAS"
-        sub="Materiales al mayoreo con entrega el mismo día. Precios firmes por 48 horas tras tu cotización."
-        cats={CATS_C}
-        products={COMPRAS}
-        kind="compra"
-        onAdd={addItem}
-      />
-
-      <Stripe />
-
-      <Catalog
-        id="renta"
-        kicker="02 / Renta de Equipo"
-        title="RENTA"
-        sub="Equipo profesional listo para obra. Renta mínima 24 horas, con opción de operador certificado."
-        cats={CATS_R}
-        products={RENTA}
-        kind="renta"
-        onAdd={addItem}
-        dark
-      />
-
-      <Footer />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Hero />
+            <DiagonalCut from="#1A1A1A" to="#FFFFFF" />
+            <FeaturedSection onAdd={addItem} />
+            <Footer />
+          </>
+        } />
+        <Route path="/compras" element={<ComprasPage onAdd={addItem} />} />
+        <Route path="/renta" element={<RentaPage onAdd={addItem} />} />
+        <Route path="/quienes-somos" element={<QuienesSomosPage />} />
+      </Routes>
       <Drawer open={cartOpen} onClose={() => setCartOpen(false)} items={items} setItems={setItems} />
     </>
   )
