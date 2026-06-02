@@ -8,7 +8,7 @@ export default function Drawer({ open, onClose, items, setItems }) {
   }, [open])
 
   const subtotal = items.reduce((s, i) => s + i.price * i.qty, 0)
-  const iva = subtotal * 0.16
+  const iva = subtotal * 0.19
   const total = subtotal + iva
 
   const inc = (id) => setItems(items.map(i => i.id === id ? { ...i, qty: i.qty + 1 } : i))
@@ -20,7 +20,7 @@ export default function Drawer({ open, onClose, items, setItems }) {
   const waMsg = encodeURIComponent(
     'Hola FORJA, me interesa cotizar:\n' +
     items.map(i => `• ${i.qty}× ${i.name} (${i.kind === 'renta' ? 'renta' : 'compra'})`).join('\n') +
-    `\nTotal estimado: $${fmt(total)} MXN`
+    `\nTotal estimado: $${fmt(total)} COP`
   )
 
   return (
@@ -54,7 +54,7 @@ export default function Drawer({ open, onClose, items, setItems }) {
                 </div>
                 <div>
                   <div className="d-name">{i.name}</div>
-                  <div className="d-meta">{i.sku} · ${fmt(i.price)} /{i.unit}</div>
+                  <div className="d-meta">{i.sku} · COP ${fmt(i.price)} /{i.unit}</div>
                   <div className="d-qty">
                     <button onClick={() => dec(i.id)}>−</button>
                     <span>{i.qty}</span>
@@ -72,15 +72,15 @@ export default function Drawer({ open, onClose, items, setItems }) {
 
         <div className="drawer-foot">
           <div className="d-line"><span>Subtotal</span><span>${fmt(subtotal)}</span></div>
-          <div className="d-line"><span>IVA 16%</span><span>${fmt(iva)}</span></div>
+          <div className="d-line"><span>IVA 19%</span><span>${fmt(iva)}</span></div>
           <div className="d-line"><span>Envío</span><span>Por cotizar</span></div>
           <div className="d-total">
             <div className="l">TOTAL</div>
-            <div className="v"><span className="currency">MXN</span>${fmt(total)}</div>
+            <div className="v"><span className="currency">COP</span>${fmt(total)}</div>
           </div>
           <a
             className="wa-btn"
-            href={items.length ? `https://wa.me/528112345678?text=${waMsg}` : '#'}
+            href={items.length ? `https://wa.me/573128502364?text=${waMsg}` : '#'}
             target="_blank"
             rel="noreferrer"
             onClick={e => { if (!items.length) e.preventDefault() }}

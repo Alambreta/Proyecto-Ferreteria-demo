@@ -23,7 +23,7 @@ export default function ProductCard({ p, kind, onAdd }) {
         </span>
         <div className="card-foot">
           <div className="card-price">
-            <span className="currency">MXN</span>
+            <span className="currency">COP</span>
             <span className="amount">${fmt(p.price)}</span>
             <span className="unit">/{p.unit}</span>
           </div>

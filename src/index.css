@@ -40,15 +40,15 @@
 */
 
 :root {
-  --red:      #CC1212;
-  --red-dark: #8B0000;
-  --white:    #FFFFFF;
-  --gray-50:  #F2F2F2;
-  --gray-200: #D9D9D9;
-  --gray-400: #9E9E9E;
-  --gray-700: #3A3A3A;
-  --gray-900: #2B2B2B;
-  --black:    #1A1A1A;
+  --red:      #F26B1A;
+  --red-dark: #C04E0E;
+  --white:    #FFFDF8;
+  --gray-50:  #F5EDE2;
+  --gray-200: #DDD0BE;
+  --gray-400: #9E8C78;
+  --gray-700: #5A4A38;
+  --gray-900: #3A2E22;
+  --black:    #2A2018;
 
   --max:   80rem;    /* 1280px */
   --pad-x: 2.5rem;  /* 40px  */
@@ -216,13 +216,13 @@ button {
 
 .btn-outline {
   background: transparent;
-  color: var(--white);
-  border-color: var(--white);
+  color: var(--gray-900);
+  border-color: var(--gray-900);
 }
 
 .btn-outline:hover {
-  background: var(--white);
-  color: var(--gray-900);
+  background: var(--gray-900);
+  color: var(--white);
 }
 
 .btn-dark {
@@ -254,14 +254,14 @@ button {
   left: 0;
   right: 0;
   z-index: 50;
-  background: var(--gray-900);
+  background: var(--white);
   transition: background 200ms ease, box-shadow 200ms ease;
-  border-bottom: 1px solid #00000040;
+  border-bottom: 1px solid var(--gray-200);
 }
 
 .nav.scrolled {
-  background: var(--black);
-  box-shadow: 0 6px 0 #8B000022, 0 12px 30px rgba(0,0,0,.45);
+  background: var(--gray-50);
+  box-shadow: 0 6px 0 #F26B1A22, 0 12px 30px rgba(0,0,0,.12);
 }
 
 .nav-inner {
@@ -273,7 +273,7 @@ button {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 1.5rem; /* 24px */
-  color: var(--white);
+  color: var(--gray-900);
 }
 
 .logo {
@@ -296,10 +296,10 @@ button {
 
 .nav-brand-text {
   font-family: "Dancing Script", cursive;
-  color: var(--white);
+  color: var(--black);
   width: 12rem; /* 90px */
   font-size: 1.30rem; /* 20px */
-  border: 1px solid var(--white);
+  border: 1px solid var(--black);
   padding: 0.25rem 2rem; /* 4px 8px */
 }
 
@@ -326,7 +326,7 @@ button {
 }
 
 .logo-name span {
-  color: var(--white);
+  color: var(--gray-700);
   font-size: 0.6875rem;  /* 11px */
   letter-spacing: .3em;
   display: block;
@@ -346,7 +346,7 @@ button {
   font-size: 0.9375rem; /* 15px */
   text-transform: uppercase;
   letter-spacing: .14em;
-  color: var(--white);
+  color: var(--gray-900);
   padding: 0.375rem 0.125rem; /* 6px 2px */
   position: relative;
 }
@@ -382,8 +382,8 @@ button {
   gap: 0.5rem;          /* 8px */
   font-family: "JetBrains Mono", monospace;
   font-size: 0.75rem;   /* 12px */
-  color: var(--white);
-  border: 1px solid #ffffff22;
+  color: var(--gray-900);
+  border: 1px solid var(--gray-200);
   padding: 0.5rem 0.75rem; /* 8px 12px */
   border-radius: 0.125rem; /* 2px */
 }
@@ -442,8 +442,8 @@ button {
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
-  background: var(--black);
-  color: var(--white);
+  background: var(--gray-50);
+  color: var(--gray-900);
   overflow: hidden;
   min-height: 45rem;                        /* 720px */
   padding: 10rem var(--pad-x) 12.5rem;      /* 160px … 200px */
@@ -455,17 +455,17 @@ button {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(26,26,26,.55) 0%, rgba(26,26,26,.85) 100%),
-    linear-gradient(120deg, rgba(140,0,0,.55), rgba(140,0,0,.25) 60%, transparent 90%),
-    repeating-linear-gradient(135deg, #1f1f1f 0 0.75rem, #1a1a1a 0.75rem 1.625rem); /* 12px 26px */
+    linear-gradient(180deg, rgba(245,237,226,.70) 0%, rgba(245,237,226,.90) 100%),
+    linear-gradient(120deg, rgba(242,107,26,.12), rgba(242,107,26,.05) 60%, transparent 90%),
+    repeating-linear-gradient(135deg, #e8ddd0 0 0.75rem, #f0e8dc 0.75rem 1.625rem); /* 12px 26px */
 }
 
 .hero-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, #ffffff08 1px, transparent 1px),
-    linear-gradient(to bottom, #ffffff08 1px, transparent 1px);
+    linear-gradient(to right, #00000012 1px, transparent 1px),
+    linear-gradient(to bottom, #00000012 1px, transparent 1px);
   background-size: 5rem 5rem; /* 80px 80px */
 }
 
@@ -494,7 +494,7 @@ button {
   font-size: 0.6875rem;  /* 11px */
   text-transform: uppercase;
   letter-spacing: .3em;
-  color: #ffffffcc;
+  color: var(--gray-700);
   margin-bottom: 1.75rem; /* 28px */
 }
 
@@ -533,7 +533,7 @@ button {
 .hero-sub {
   margin-top: 1.75rem;   /* 28px */
   max-width: 54ch;
-  color: #dcdcdc;
+  color: var(--gray-700);
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 500;
   font-size: 1.3125rem;  /* 21px */
@@ -552,13 +552,13 @@ button {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
-  border-top: 1px solid #ffffff22;
-  border-bottom: 1px solid #ffffff22;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
 }
 
 .hero-meta > div {
   padding: 1.375rem 0; /* 22px */
-  border-right: 1px solid #ffffff14;
+  border-right: 1px solid var(--gray-200);
 }
 
 .hero-meta > div:last-child {
@@ -568,7 +568,7 @@ button {
 .hero-meta .n {
   font-family: "Bebas Neue", sans-serif;
   font-size: 2.75rem; /* 44px */
-  color: var(--white);
+  color: var(--gray-900);
   line-height: 1;
 }
 
@@ -665,11 +665,84 @@ button {
 }
 
 .quienes-inner {
-  max-width: 860px;
+  max-width: 1024px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 4rem;
+}
+
+.quienes-intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: 55vh;
+  padding: 2rem 1rem;
+}
+
+.quienes-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: var(--gray-400);
+}
+
+.quienes-tag::before,
+.quienes-tag::after {
+  content: "";
+  width: 2rem;
+  height: 1.5px;
+  background: var(--red);
+}
+
+.quienes-intro h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  letter-spacing: .02em;
+  color: var(--gray-900);
+  line-height: 1.0;
+}
+
+.quienes-accent {
+  color: var(--red);
+}
+
+.quienes-intro p {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  line-height: 1.5;
+  max-width: 48ch;
+}
+
+/* ── Scroll reveal ──────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(2.5rem);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal--delay {
+  transition-delay: 200ms;
+}
+
+.reveal--delay-2 {
+  transition-delay: 100ms;
 }
 
 .quienes-block {
@@ -689,10 +762,303 @@ button {
   padding-left: 0.75rem;
 }
 
-.quienes-content {
-  min-height: 8rem;
-  border: 1.5px dashed var(--gray-300);
-  border-radius: 0.25rem;
+.quienes-kicker--center {
+  border-left: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+/* ── Servicios Page ─────────────────────────────────────────── */
+.servicios-section {
+  padding: 5rem 2rem 6rem;
+  background: var(--white);
+  min-height: 80vh;
+}
+
+.servicios-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.servicios-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.servicios-kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.servicios-kicker::before {
+  content: "";
+  width: 2rem;
+  height: 1.5px;
+  background: var(--red);
+}
+
+.servicios-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  letter-spacing: .02em;
+  line-height: 1;
+  color: var(--gray-900);
+}
+
+.servicios-sub {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  line-height: 1.5;
+  max-width: 54ch;
+}
+
+.servicios-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.servicio-item {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--gray-200);
+  transition: background 200ms ease;
+}
+
+.servicio-item:first-child {
+  border-top: 1px solid var(--gray-200);
+}
+
+.servicio-num {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  color: var(--gray-200);
+  line-height: 1;
+  padding-top: 0.25rem;
+  transition: color 200ms ease;
+}
+
+.servicio-item:hover .servicio-num {
+  color: var(--red);
+}
+
+.servicio-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.servicio-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--gray-900);
+}
+
+.servicio-desc {
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+  line-height: 1.65;
+  max-width: 64ch;
+}
+
+.servicio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.servicio-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.5625rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--gray-700);
+  border: 1px solid var(--gray-200);
+  padding: 0.3rem 0.625rem;
+}
+
+.servicios-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 2.5rem 3rem;
+  background: var(--gray-50);
+  border-left: 4px solid var(--red);
+}
+
+.servicios-cta p {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+@media (max-width: 560px) {
+  .servicio-item {
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1rem;
+  }
+
+  .servicio-num {
+    font-size: 2rem;
+  }
+}
+
+/* ── Owner biography cards ──────────────────────────────────── */
+.owner-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 32rem;
+  border: 1px solid var(--gray-200);
+  border-bottom: 3px solid var(--gray-200);
+  overflow: hidden;
+  transition: border-bottom-color 300ms ease, box-shadow 300ms ease;
+}
+
+.owner-card:hover {
+  border-bottom-color: var(--red);
+  box-shadow: 8px 8px 0 var(--red-dark);
+}
+
+.owner-figure {
+  position: relative;
+  overflow: hidden;
+  background: var(--gray-50);
+}
+
+.owner-figure img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 500ms ease;
+  display: block;
+}
+
+.owner-card:hover .owner-figure img {
+  transform: scale(1.05);
+}
+
+.owner-figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--black) 0%, rgba(42,32,24,0.55) 100%);
+  opacity: 0;
+  transition: opacity 350ms ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.owner-card:hover .owner-figure::after {
+  opacity: 0.3;
+}
+
+.owner-content {
+  padding: 2.75rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.125rem;
+  background: var(--white);
+  border-left: 4px solid var(--red);
+}
+
+.owner-card--reverse .owner-content {
+  border-left: none;
+  border-right: 4px solid var(--red);
+}
+
+.owner-role {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: .28em;
+  color: var(--red);
+}
+
+.owner-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  letter-spacing: .02em;
+  line-height: 1;
+  color: var(--gray-900);
+  margin-bottom: -0.25rem;
+}
+
+.owner-subtitle {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--gray-400);
+}
+
+.owner-text {
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+  line-height: 1.65;
+  max-width: 52ch;
+}
+
+.owner-quote {
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--gray-900);
+  border-left: 3px solid var(--red);
+  padding-left: 1rem;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 720px) {
+  .owner-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .owner-figure {
+    min-height: 20rem;
+    position: relative;
+  }
+
+  .owner-figure img {
+    position: absolute;
+  }
+
+  .owner-card--reverse .owner-content {
+    order: 2;
+    border-right: none;
+    border-left: 4px solid var(--red);
+  }
+
+  .owner-card--reverse .owner-figure {
+    order: 1;
+  }
 }
 
 .quienes-providers {
@@ -960,7 +1326,7 @@ button {
   content: "";
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(135deg, transparent 0 1.75rem, #cc121218 1.75rem 3.5rem); /* 28px 56px */
+  background: repeating-linear-gradient(135deg, transparent 0 1.75rem, #D4651A18 1.75rem 3.5rem); /* 28px 56px */
 }
 
 .stripe-inner {
@@ -1023,7 +1389,7 @@ button {
   right: 0;
   width: 17.5rem;  /* 280px */
   height: 17.5rem; /* 280px */
-  background: repeating-linear-gradient(45deg, transparent 0 0.75rem, #cc121211 0.75rem 0.875rem); /* 12px 14px */
+  background: repeating-linear-gradient(45deg, transparent 0 0.75rem, #D4651A11 0.75rem 0.875rem); /* 12px 14px */
   pointer-events: none;
 }
 

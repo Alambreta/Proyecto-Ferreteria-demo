@@ -5,7 +5,7 @@ import { I } from './Icons.jsx'
 const NAV_LINKS = [
   { id: 'compras',   label: 'Compras',   to: '/compras' },
   { id: 'renta',     label: 'Renta',     to: '/renta' },
-  { id: 'servicios', label: 'Servicios', href: '#servicios' },
+  { id: 'servicios', label: 'Servicios', to: '/servicios' },
   { id: 'quienes-somos', label: 'Quienes Somos', to: '/quienes-somos' },
   { id: 'contacto',  label: 'Contacto',  href: '#contacto' },
 ]
@@ -23,12 +23,10 @@ export default function Nav({ cartCount, onOpenCart, activeSection }) {
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-inner">
-        <div className="nav-brand">
-          <Link to="/" aria-label="Ir al inicio">
-            <img src="/logos/los-equipos-no-text.png" alt="Logo" className="nav-logo" />
-          </Link>
+        <Link to="/" className="nav-brand" aria-label="Ir al inicio">
+          <img src="/logos/logo-negro-no-text.png" alt="Logo" className="nav-logo" />
           <span className="nav-brand-text">Los Equipos E.L</span>
-        </div>
+        </Link>
         <div className="nav-links">
           {NAV_LINKS.map(l =>
             l.to

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Logo from './Logo.jsx'
 import { I } from './Icons.jsx'
 
@@ -8,7 +9,7 @@ export default function Footer() {
       <div className="footer-inner">
         <div className="f-brand">
           <Logo />
-          <p>Materiales de construcción y renta de equipo para obra residencial, comercial e industrial. Operando en Cali y su área metropolitana desde 1997.</p>
+          <p>Materiales de construcción y renta de equipo para obra residencial, comercial e industrial. Operando en Cali y su área metropolitana desde 2017.</p>
           <div className="f-cert">
             <span>ISO 9001</span>
             <span>NOM-006-STPS</span>
@@ -28,7 +29,7 @@ export default function Footer() {
         <div className="f-col">
           <h5>Empresa</h5>
           <ul>
-            <li><a href="#">Nosotros</a></li>
+            <li><Link to="/quienes-somos">Nosotros</Link></li>
             <li><a href="#">Sucursales</a></li>
             <li><a href="#">Crédito Empresarial</a></li>
             <li><a href="#">Bolsa de Trabajo</a></li>

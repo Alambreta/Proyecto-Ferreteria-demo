@@ -9,6 +9,7 @@ import Footer from './components/Footer.jsx'
 import ComprasPage from './pages/ComprasPage.jsx'
 import RentaPage from './pages/RentaPage.jsx'
 import QuienesSomosPage from './pages/QuienesSomosPage.jsx'
+import ServiciosPage from './pages/ServiciosPage.jsx'
 import { COMPRAS, RENTA } from './data/products.js'
 
 const SECTION_IDS = ['compras', 'renta', 'servicios', 'cobertura', 'contacto']
@@ -16,15 +17,13 @@ const SECTION_IDS = ['compras', 'renta', 'servicios', 'cobertura', 'contacto']
 export default function App() {
   const location = useLocation()
   const [cartOpen, setCartOpen] = useState(false)
-  const [items, setItems] = useState([
-    { ...COMPRAS[0], qty: 20, kind: 'compra' },
-    { ...RENTA[0],   qty: 2,  kind: 'renta' },
-  ])
+  const [items, setItems] = useState([])
   const [scrollActive, setScrollActive] = useState('compras')
 
   const routeActive = location.pathname === '/compras' ? 'compras'
     : location.pathname === '/renta' ? 'renta'
     : location.pathname === '/quienes-somos' ? 'quienes-somos'
+    : location.pathname === '/servicios' ? 'servicios'
     : null
 
   const active = routeActive ?? scrollActive
@@ -81,6 +80,7 @@ export default function App() {
         <Route path="/compras" element={<ComprasPage onAdd={addItem} />} />
         <Route path="/renta" element={<RentaPage onAdd={addItem} />} />
         <Route path="/quienes-somos" element={<QuienesSomosPage />} />
+        <Route path="/servicios" element={<ServiciosPage />} />
       </Routes>
       <Drawer open={cartOpen} onClose={() => setCartOpen(false)} items={items} setItems={setItems} />
     </>
