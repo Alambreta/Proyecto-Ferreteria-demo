@@ -21,7 +21,7 @@ export default function QuienesSomosPage() {
         <div className="quienes-inner" ref={innerRef}>
 
           <div className="quienes-intro">
-            <span className="quienes-tag">Est. 1997 · Cali, Colombia</span>
+            <span className="quienes-tag">Est. 2017 · Cali, Colombia</span>
             <h1>
               Nuestra <span className="quienes-accent">promesa</span><br />de marca
             </h1>

@@ -12,21 +12,16 @@ import QuienesSomosPage from './pages/QuienesSomosPage.jsx'
 import ServiciosPage from './pages/ServiciosPage.jsx'
 import { COMPRAS, RENTA } from './data/products.js'
 
-const SECTION_IDS = ['compras', 'renta', 'servicios', 'cobertura', 'contacto']
 
 export default function App() {
   const location = useLocation()
   const [cartOpen, setCartOpen] = useState(false)
   const [items, setItems] = useState([])
-  const [scrollActive, setScrollActive] = useState('compras')
-
-  const routeActive = location.pathname === '/compras' ? 'compras'
+  const active = location.pathname === '/compras' ? 'compras'
     : location.pathname === '/renta' ? 'renta'
     : location.pathname === '/quienes-somos' ? 'quienes-somos'
     : location.pathname === '/servicios' ? 'servicios'
     : null
-
-  const active = routeActive ?? scrollActive
 
   const cartCount = items.reduce((s, i) => s + i.qty, 0)
 
@@ -44,22 +39,6 @@ export default function App() {
       )
     }
   }
-
-  useEffect(() => {
-    if (location.pathname !== '/') return
-    const onScroll = () => {
-      const y = window.scrollY + 120
-      let cur = 'compras'
-      SECTION_IDS.forEach(id => {
-        const el = document.getElementById(id)
-        if (el && el.offsetTop <= y) cur = id
-      })
-      setScrollActive(cur)
-    }
-    window.addEventListener('scroll', onScroll)
-    onScroll()
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [location.pathname])
 
   useEffect(() => {
     window.scrollTo(0, 0)
