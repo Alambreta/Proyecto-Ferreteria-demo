@@ -2,44 +2,44 @@ import Footer from '../components/Footer.jsx'
 
 const SERVICES = [
   {
+    id: 'arquitectura-diseno',
+    icon: '📐',
+    title: 'Arquitectura y Diseño',
+    description:
+      'Diseño de proyectos residenciales, comerciales e institucionales. Planos, renders y animaciones 3D. Gestión de licencias de construcción, propiedad horizontal, presupuestos e interventoría.',
+    tags: ['Diseño arquitectónico', 'Planos y renders', 'Trámites legales', 'Construcción de obra civil', 'Presupuestos de obra', 'Interventoría y avalúos'],
+  },
+  {
+    id: 'alquiler-equipos',
+    icon: '🏗️',
+    title: 'Alquiler de Equipos y Herramientas',
+    description:
+      'Taladros demoledores, percutores y rotomartillo. Pulidoras, vibradores, pluma y cortadora de ladrillo. Andamios certificados y plantas e hidrolavadoras para todo tipo de obra.',
+    tags: ['Taladros y demoledores', 'Pulidoras y vibradores', 'Andamios certificados', 'Plantas e hidrolavadoras'],
+  },
+  {
     id: 'venta-materiales',
     icon: '🧱',
     title: 'Venta de Materiales',
     description:
-      'Suministro de materiales de construcción al mayoreo y menudeo: cemento, varilla, block, arena, grava, impermeabilizantes, lámina y más. Stock permanente con precios firmes.',
-    tags: ['Cemento', 'Varilla', 'Block', 'Arena y Grava', 'Impermeabilizantes'],
+      'Gravas, arena, aceros, cementos Argos y San Marcos, pegantes Sika, pinturas Pintuco y Bler, láminas Superboard, cubiertas y abrasivos. Retiro de escombros con certificación de disposición final.',
+    tags: ['Material de patio', 'Aceros y metales', 'Cementos y pegantes', 'Pinturas y estucos', 'Láminas y paneles', 'Cubierta y cielos rasos', 'Abrasivos y accesorios'],
   },
   {
-    id: 'renta-equipo',
-    icon: '🏗️',
-    title: 'Renta de Equipo y Maquinaria',
+    id: 'servicios-tecnicos',
+    icon: '🔧',
+    title: 'Servicios Técnicos',
     description:
-      'Renta de equipo pesado y herramienta especializada para obra residencial, comercial e industrial. Entrega y retiro en sitio. Asesoría incluida para selección del equipo correcto.',
-    tags: ['Andamios', 'Revolvedoras', 'Compactadoras', 'Generadores', 'Herramienta eléctrica'],
+      'Reparación de taladros, hidrolavadoras y plantas. Pase de losas y núcleos con operario y máquina. Transporte de equipos y materiales, asesoría SGSST y afiliación a seguridad social.',
+    tags: ['Reparación de equipos', 'Pase de losas y núcleos', 'Transporte', 'Asesoría SGSST', 'Afiliación seguridad social', 'Asesoría en pintura'],
   },
   {
-    id: 'asesoria',
-    icon: '📐',
-    title: 'Asesoría Técnica',
+    id: 'mantenimiento-locativo',
+    icon: '🏠',
+    title: 'Mantenimiento Locativo',
     description:
-      'Orientación directa de nuestro equipo para ayudarte a elegir los materiales correctos según tu proyecto, presupuesto y condiciones de obra. Sin costo adicional.',
-    tags: ['Cálculo de materiales', 'Selección de productos', 'Presupuesto de obra'],
-  },
-  {
-    id: 'entrega',
-    icon: '🚛',
-    title: 'Entrega a Domicilio',
-    description:
-      'Servicio de entrega en toda el área metropolitana de Cali. Mismo día en pedidos confirmados antes del mediodía. Flota propia, sin intermediarios.',
-    tags: ['Entrega el mismo día', 'Zona metropolitana', 'Flota propia'],
-  },
-  {
-    id: 'credito',
-    icon: '📋',
-    title: 'Crédito Empresarial',
-    description:
-      'Líneas de crédito disponibles para contratistas y empresas constructoras con historial de compras. Facilita el flujo de tu obra sin comprometer capital de trabajo.',
-    tags: ['Para contratistas', 'Para empresas', 'Plazos flexibles'],
+      'Impermeabilización de fachadas, losas, terrazas y cubiertas. Hidrolavado y repinte, demarcación de parqueaderos, mantenimiento de ventanería, anclajes certificados y mantenimiento UTB.',
+    tags: ['Impermeabilización', 'Hidrolavado y repinte', 'Demarcación de parqueaderos', 'Mantenimiento de ventanería', 'Anclajes certificados', 'Mantenimiento UTB'],
   },
 ]
 
