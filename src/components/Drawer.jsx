@@ -89,7 +89,7 @@ export default function Drawer({ open, onClose, items, setItems }) {
             <I.whatsapp /> Enviar pedido por WhatsApp
           </a>
           <div style={{ fontFamily: 'JetBrains Mono,monospace', fontSize: 10, letterSpacing: '.2em', textTransform: 'uppercase', color: '#9E9E9E', marginTop: 12, textAlign: 'center' }}>
-            Respuesta en menos de 15 minutos · L-S 7:00–19:00
+            Respuesta en menos de 15 minutos · L-V 7:00–17:00
           </div>
         </div>
       </aside>

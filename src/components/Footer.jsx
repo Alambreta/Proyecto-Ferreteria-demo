@@ -30,7 +30,6 @@ export default function Footer() {
           <h5>Empresa</h5>
           <ul>
             <li><Link to="/quienes-somos">Nosotros</Link></li>
-            <li><a href="#">Sucursales</a></li>
             <li><a href="#">Crédito Empresarial</a></li>
             <li><a href="#">Bolsa de Trabajo</a></li>
             <li><a href="#">Proveedores</a></li>
@@ -41,7 +40,7 @@ export default function Footer() {
           <ul className="f-contact">
             <li><I.pin /><span>Cali, Colombia<br /></span></li>
             <li><I.phone /><span>+57 312 850 2364</span></li>
-            <li><I.whatsapp /><span>WhatsApp 24/7</span></li>
+            <li><I.whatsapp /><span>WhatsApp L-V</span></li>
             <li><I.mail /><span>losequipose.l@gmail.com</span></li>
           </ul>
         </div>

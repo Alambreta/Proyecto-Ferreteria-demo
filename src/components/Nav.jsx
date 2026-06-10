@@ -35,7 +35,7 @@ export default function Nav({ cartCount, onOpenCart, activeSection }) {
           )}
         </div>
         <div className="nav-right">
-          <a className="nav-wa" href="#contacto">
+          <a className="nav-wa" href="https://wa.me/573128502364" target="_blank" rel="noopener noreferrer">
             <I.whatsapp /> <span>CONSULTA AHORA!</span>
           </a>
           <button className="cart-btn" onClick={onOpenCart} aria-label="Abrir carrito">
