@@ -581,6 +581,314 @@ button {
   margin-top: 0.5rem; /* 8px */
 }
 
+/* ── Hero Spec Sheet ──────────────────────────────────────── */
+
+.hero-ruler {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 2rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-ruler::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0.75rem;
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--gray-200) 0 1px,
+    transparent 1px 2.5%
+  );
+}
+
+.ruler-tick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ruler-tick::before {
+  content: "";
+  width: 1px;
+  height: 0.625rem;
+  background: var(--gray-400);
+}
+
+.ruler-num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.5rem;
+  color: var(--gray-400);
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.hero-ruler--bottom {
+  margin-bottom: 0;
+  margin-top: 1.5rem;
+  align-items: flex-end;
+}
+
+.hero-ruler--bottom .ruler-tick {
+  flex-direction: column-reverse;
+}
+
+.hero-ruler--bottom::before {
+  top: auto;
+  bottom: 0.75rem;
+}
+
+.hero-title-block {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: var(--gray-700);
+}
+
+.hero-title-divider {
+  flex: 1;
+  height: 1px;
+  background: var(--gray-200);
+}
+
+.hero-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.hero-callout {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem 0 0.75rem 1.5rem;
+  border-left: 1px dashed var(--gray-400);
+  align-self: center;
+}
+
+.callout-item {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--gray-400);
+  white-space: nowrap;
+}
+
+.callout-approved {
+  color: #25D366;
+}
+
+.meta-head {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: var(--red);
+  margin-bottom: 0.5rem;
+}
+
+/* ── Bubble level ─────────────────────────────────────────── */
+
+.nivel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 0.875rem;
+}
+
+.nivel-tube {
+  position: relative;
+  width: 11rem;
+  height: 3rem;
+  border: 1.5px solid var(--gray-400);
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255,253,248,0.05) 0%,
+    rgba(255,253,248,0.35) 40%,
+    rgba(255,253,248,0.2) 100%
+  );
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2), 2px 2px 0 var(--gray-200);
+  overflow: hidden;
+}
+
+.nivel-marks {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.375rem;
+  pointer-events: none;
+}
+
+.nivel-marks span {
+  width: 1px;
+  height: 40%;
+  background: var(--gray-200);
+}
+
+.nivel-marks .nivel-center {
+  height: 65%;
+  background: var(--gray-400);
+}
+
+.nivel-bubble {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background: radial-gradient(circle at 38% 35%, rgba(242,107,26,0.45), rgba(242,107,26,0.1));
+  border: 1.5px solid var(--red);
+  border-radius: 50%;
+  top: 50%;
+  left: 0.3rem;
+  transform: translateY(-50%) translateX(4.25rem);
+  animation: nivel-damp 12s linear infinite;
+  box-shadow: 0 0 0.5rem rgba(242,107,26,0.2);
+}
+
+.nivel-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: var(--gray-400);
+}
+
+@keyframes nivel-damp {
+  /* center = 4.25rem  |  tube travel ≈ 8.5rem */
+  0%   { transform: translateY(-50%) translateX(4.25rem); animation-timing-function: ease-in; }
+
+  /* swing 1: izquierda grande */
+  10%  { transform: translateY(-50%) translateX(0.25rem); animation-timing-function: ease-in-out; }
+  /* swing 1: derecha grande */
+  22%  { transform: translateY(-50%) translateX(8.25rem); animation-timing-function: ease-in-out; }
+
+  /* swing 2: izquierda menor */
+  33%  { transform: translateY(-50%) translateX(1.5rem);  animation-timing-function: ease-in-out; }
+  /* swing 2: derecha menor */
+  43%  { transform: translateY(-50%) translateX(7rem);    animation-timing-function: ease-in-out; }
+
+  /* swing 3: amortiguado */
+  52%  { transform: translateY(-50%) translateX(2.5rem);  animation-timing-function: ease-in-out; }
+  60%  { transform: translateY(-50%) translateX(6rem);    animation-timing-function: ease-in-out; }
+
+  /* swing 4: casi centro */
+  67%  { transform: translateY(-50%) translateX(3rem);    animation-timing-function: ease-in-out; }
+  73%  { transform: translateY(-50%) translateX(5.5rem);  animation-timing-function: ease-in-out; }
+
+  /* swing 5: micro-oscilacion */
+  78%  { transform: translateY(-50%) translateX(3.625rem); animation-timing-function: ease-in-out; }
+  82%  { transform: translateY(-50%) translateX(4.875rem); animation-timing-function: ease-in-out; }
+
+  /* asienta en centro */
+  86%  { transform: translateY(-50%) translateX(4.25rem); animation-timing-function: linear; }
+
+  /* hold en centro — seamless loop */
+  100% { transform: translateY(-50%) translateX(4.25rem); }
+}
+
+/* ── Hero background pattern ─────────────────────────────── */
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-pattern-item {
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  color: var(--gray-900);
+  opacity: 0.08;
+}
+
+.hero-pattern-item svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Conveyor belt ────────────────────────────────────────── */
+
+.conveyor {
+  position: relative;
+  overflow: hidden;
+  margin: 2.5rem 0;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 1.5rem 0;
+}
+
+.conveyor::before,
+.conveyor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.conveyor::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--gray-50) 0%, transparent 100%);
+}
+
+.conveyor::after {
+  right: 0;
+  background: linear-gradient(-90deg, var(--gray-50) 0%, transparent 100%);
+}
+
+.conveyor-inner {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  width: max-content;
+  animation: conveyor-scroll 28s linear infinite;
+}
+
+.conveyor-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+  color: var(--gray-700);
+  opacity: 0.5;
+}
+
+.conveyor-item svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes conveyor-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 /* diagonal cut between hero and section */
 .diagonal-cut {
   position: relative;
@@ -1907,6 +2215,30 @@ footer {
 
   .hero-meta > div:nth-child(2) {
     border-right: 0;
+  }
+
+  .hero-ruler {
+    display: none;
+  }
+
+  .hero-callout {
+    display: none;
+  }
+
+  .hero-title-block {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-body {
+    display: block;
+  }
+
+  .nivel {
+    display: none;
+  }
+
+  .conveyor {
+    margin: 1.5rem 0;
   }
 }
 

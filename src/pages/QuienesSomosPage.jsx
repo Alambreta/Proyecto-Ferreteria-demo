@@ -23,7 +23,7 @@ export default function QuienesSomosPage() {
           <div className="quienes-intro">
             <span className="quienes-tag">Est. 2017 · Cali, Colombia</span>
             <h1>
-              Nuestra <span className="quienes-accent">promesa</span><br />de marca
+              — Construye más.<br /><span className="quienes-accent">Preocúpate menos.</span>
             </h1>
             <p>En Los Equipos E.L encontrarás siempre lo que necesitas para construir, el consejo que te ahorra un error y la confianza de saber que alguien responde por lo que te vende.</p>
           </div>
@@ -33,7 +33,7 @@ export default function QuienesSomosPage() {
               <img src="/material de trabajo/foto-LO.png" alt="Co-fundadora" />
             </figure>
             <div className="owner-content">
-              <span className="owner-role">Co-fundadora · Dirección General</span>
+              <span className="owner-role">Fundadora · Dirección General</span>
               <h2 className="owner-title">Misión</h2>
               <p className="owner-subtitle">Lo que hacemos cada día</p>
               <p className="owner-text">
