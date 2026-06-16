@@ -107,8 +107,8 @@ export default function Hero() {
           </aside>
         </div>
         <p className="hero-sub">
-          Materiales de obra al mayoreo y renta de equipo pesado. Entrega el mismo día en todo el área
-          metropolitana. Sin letras chiquitas, sin sobreprecios.
+          Materiales de obra y renta de equipo especializado. Entrega programada en toda el área
+          departamental. Sin letras chiquitas, sin sobreprecios.
         </p>
         <div className="hero-actions">
           <Link to="/compras" className="btn btn-red">Ver Compras <I.arrow className="btn-arrow" /></Link>
