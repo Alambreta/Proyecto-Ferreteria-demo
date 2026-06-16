@@ -30,16 +30,32 @@ const SERVICES = [
     icon: '🔧',
     title: 'Servicios Técnicos',
     description:
-      'Reparación de taladros, hidrolavadoras y plantas. Pase de losas y núcleos con operario y máquina. Transporte de equipos y materiales, asesoría SGSST y afiliación a seguridad social.',
-    tags: ['Reparación de equipos', 'Pase de losas y núcleos', 'Transporte', 'Asesoría SGSST', 'Afiliación seguridad social', 'Asesoría en pintura'],
+      'Reparación de taladros, hidrolavadoras y plantas eléctricas. Pase de losas y núcleos con operario y máquina. Anclajes certificados y asesoría especializada en pintura.',
+    tags: ['Reparación de equipos', 'Pase de losas/núcleos', 'Anclajes certificados'],
   },
   {
     id: 'mantenimiento-locativo',
     icon: '🏠',
     title: 'Mantenimiento Locativo',
     description:
-      'Impermeabilización de fachadas, losas, terrazas y cubiertas. Hidrolavado y repinte, demarcación de parqueaderos, mantenimiento de ventanería, anclajes certificados y mantenimiento UTB.',
-    tags: ['Impermeabilización', 'Hidrolavado y repinte', 'Demarcación de parqueaderos', 'Mantenimiento de ventanería', 'Anclajes certificados', 'Mantenimiento UTB'],
+      'Impermeabilización de fachadas, losas, terrazas y cubiertas. Hidrolavado y repinte, demarcación de parqueaderos, mantenimiento de ventanería y mantenimiento UTB.',
+    tags: ['Impermeabilización', 'Hidrolavado y repinte', 'Demarcación de parqueaderos', 'Mantenimiento de ventanería', 'Mantenimiento UTB'],
+  },
+  {
+    id: 'asesoria-gestion',
+    icon: '📋',
+    title: 'Asesoría y Gestión',
+    description:
+      'Acompañamiento en seguridad y salud en el trabajo. Implementación del SG-SST, afiliación a seguridad social para trabajadores independientes, venta de EPP y señalización vial.',
+    tags: ['Asesoría SGSST', 'Implementación SG-SST', 'Afiliación seguridad social', 'Venta de EPP', 'Señalización vial', 'Asesoría en pintura'],
+  },
+  {
+    id: 'transporte',
+    icon: '🚛',
+    title: 'Transporte',
+    description:
+      'Transporte de materiales de construcción y retiro de escombros con certificación de disposición final. Cobertura en el área metropolitana de Cali.',
+    tags: ['Transporte de Materiales', 'Transporte de Escombros'],
   },
 ]
 

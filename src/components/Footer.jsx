@@ -40,6 +40,7 @@ export default function Footer() {
           <ul className="f-contact">
             <li><I.pin /><span>Cali, Colombia<br /></span></li>
             <li><I.phone /><span>+57 312 850 2364</span></li>
+            <li><I.phone /><span>+57 320 652 7318</span></li>
             <li><I.whatsapp /><span>WhatsApp L-V</span></li>
             <li><I.mail /><span>losequipose.l@gmail.com</span></li>
           </ul>

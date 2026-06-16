@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { I } from './Icons.jsx'
 import ProductCard from './ProductCard.jsx'
 
-export default function Catalog({ id, kicker, title, sub, cats, products, kind, onAdd, dark }) {
+export default function Catalog({ id, kicker, title, sub, cats, products, kind, onAdd, dark, loading, error }) {
   const [q, setQ] = useState('')
   const [cat, setCat] = useState('TODO')
 
@@ -53,16 +53,25 @@ export default function Catalog({ id, kicker, title, sub, cats, products, kind, 
           </div>
         </div>
 
-        <div className="grid">
-          {filtered.map(p => (
-            <ProductCard key={p.id} p={p} kind={kind} onAdd={onAdd} />
-          ))}
-        </div>
-
-        {filtered.length === 0 && (
-          <div style={{ padding: '60px 0', textAlign: 'center', color: '#9E9E9E', fontFamily: 'JetBrains Mono', fontSize: 13, letterSpacing: '.18em', textTransform: 'uppercase' }}>
-            — Sin resultados —
-          </div>
+        {loading && (
+          <div className="catalog-loading">— Cargando catálogo —</div>
+        )}
+        {error && (
+          <div className="catalog-error">Error: {error}</div>
+        )}
+        {!loading && !error && (
+          <>
+            <div className="grid">
+              {filtered.map(p => (
+                <ProductCard key={p.id} p={p} kind={kind} onAdd={onAdd} />
+              ))}
+            </div>
+            {filtered.length === 0 && (
+              <div style={{ padding: '60px 0', textAlign: 'center', color: '#9E9E9E', fontFamily: 'JetBrains Mono', fontSize: 13, letterSpacing: '.18em', textTransform: 'uppercase' }}>
+                — Sin resultados —
+              </div>
+            )}
+          </>
         )}
       </div>
     </section>

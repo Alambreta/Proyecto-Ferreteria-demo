@@ -1,11 +1,23 @@
+import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import ProductCard from './ProductCard.jsx'
-import { COMPRAS, RENTA } from '../data/products.js'
-
-const featuredCompras = COMPRAS.filter(p => p.featured)
-const featuredRenta   = RENTA.filter(p => p.featured)
+import { useCatalog } from '../hooks/useCatalog.js'
 
 export default function FeaturedSection({ onAdd }) {
+  const { items, loading } = useCatalog()
+
+  const featuredCompras = useMemo(
+    () => items.filter(p => (p.tipo === 'Venta Materiales' || p.tipo === 'Venta Consumibles') && p.destacado),
+    [items]
+  )
+
+  const featuredRenta = useMemo(
+    () => items.filter(p => p.tipo === 'Alquiler' && p.destacado),
+    [items]
+  )
+
+  if (loading) return null
+
   return (
     <section className="featured section-pad wrap">
       <div className="featured-block">

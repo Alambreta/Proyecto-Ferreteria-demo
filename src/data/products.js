@@ -23,4 +23,4 @@ export const RENTA = [
 export const CATS_C = ['TODO', 'CEMENTO', 'ACERO', 'BLOCK', 'MADERA', 'CAL', 'MORTERO', 'LÁMINA', 'PINTURA']
 export const CATS_R = ['TODO', 'CONCRETO', 'ANDAMIO', 'ELÉCTRICA', 'ENERGÍA', 'COMPACTACIÓN', 'ACCESO']
 
-export const fmt = (n) => n.toLocaleString('es-MX', { maximumFractionDigits: 2 })
+export const fmt = (n) => n.toLocaleString('es-CO', { maximumFractionDigits: 0 })
