@@ -10,8 +10,6 @@ import ComprasPage from './pages/ComprasPage.jsx'
 import RentaPage from './pages/RentaPage.jsx'
 import QuienesSomosPage from './pages/QuienesSomosPage.jsx'
 import ServiciosPage from './pages/ServiciosPage.jsx'
-import { COMPRAS, RENTA } from './data/products.js'
-
 
 export default function App() {
   const location = useLocation()
