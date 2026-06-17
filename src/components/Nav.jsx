@@ -3,11 +3,17 @@ import { Link } from 'react-router-dom'
 import { I } from './Icons.jsx'
 
 const NAV_LINKS = [
-  { id: 'compras',   label: 'Compras',   to: '/compras' },
-  { id: 'renta',     label: 'Renta',     to: '/renta' },
-  { id: 'servicios', label: 'Servicios', to: '/servicios' },
+  { id: 'compras',      label: 'Compras',      to: '/compras' },
+  {
+    id: 'renta', label: 'Renta', to: '/renta',
+    children: [
+      { id: 'transporte', label: 'Transporte',        to: '/transporte' },
+      { id: 'maquinaria', label: 'Maquinaria Amarilla', to: '/maquinaria' },
+    ],
+  },
+  { id: 'servicios',    label: 'Servicios',    to: '/servicios' },
   { id: 'quienes-somos', label: 'Quienes Somos', to: '/quienes-somos' },
-  { id: 'contacto',  label: 'Contacto',  href: '#contacto' },
+  { id: 'contacto',    label: 'Contacto',     href: '#contacto' },
 ]
 
 export default function Nav({ cartCount, onOpenCart, activeSection }) {
@@ -28,11 +34,33 @@ export default function Nav({ cartCount, onOpenCart, activeSection }) {
           <span className="nav-brand-text">Los Equipos E.L</span>
         </Link>
         <div className="nav-links">
-          {NAV_LINKS.map(l =>
-            l.to
+          {NAV_LINKS.map(l => {
+            if (l.children) {
+              return (
+                <div key={l.id} className="nav-dropdown">
+                  <Link
+                    to={l.to}
+                    className={`nav-link nav-link--has-drop ${activeSection === l.id ? 'active' : ''}`}
+                  >
+                    {l.label}
+                    <svg className="drop-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M1 1l4 4 4-4"/>
+                    </svg>
+                  </Link>
+                  <div className="nav-dropdown-menu">
+                    {l.children.map(c => (
+                      <Link key={c.id} to={c.to} className="nav-dropdown-item">
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )
+            }
+            return l.to
               ? <Link key={l.id} to={l.to} className={`nav-link ${activeSection === l.id ? 'active' : ''}`}>{l.label}</Link>
-              : <a key={l.id} href={l.href} className={`nav-link ${activeSection === l.id ? 'active' : ''}`}>{l.label}</a>
-          )}
+              : <a   key={l.id} href={l.href} className={`nav-link ${activeSection === l.id ? 'active' : ''}`}>{l.label}</a>
+          })}
         </div>
         <div className="nav-right">
           <a className="nav-wa" href="https://wa.me/573128502364" target="_blank" rel="noopener noreferrer">

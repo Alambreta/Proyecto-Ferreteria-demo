@@ -82,6 +82,9 @@ export default function QuienesSomosPage() {
                 { src: '/providers/technolavadoos.png',      alt: 'Technolavados' },
                 { src: '/providers/construccionesRC.png',    alt: 'Construcciones RC' },
                 { src: '/providers/logo_losada_munoz.png',   alt: 'Losada Muñoz' },
+                { src: '/providers/logo-angela.png',         alt: 'Angela' },
+                { src: '/providers/logo-pablo.png',          alt: 'Pablo' },
+                { src: '/providers/logo-andamio.png',        alt: 'Andamio' },
               ].map(({ src, alt }) => (
                 <div key={src} className="provider-card">
                   <img src={src} alt={alt} />
