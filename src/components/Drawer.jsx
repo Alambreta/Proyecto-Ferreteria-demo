@@ -18,7 +18,7 @@ export default function Drawer({ open, onClose, items, setItems }) {
   const rm = (id) => setItems(items.filter(i => i.id !== id))
 
   const waMsg = encodeURIComponent(
-    'Hola FORJA, me interesa cotizar:\n' +
+    'Hola, me interesa cotizar:\n' +  
     items.map(i => `• ${i.qty}× ${i.name} (${i.kind === 'renta' ? 'renta' : 'compra'})`).join('\n') +
     `\nTotal estimado: $${fmt(total)} COP`
   )

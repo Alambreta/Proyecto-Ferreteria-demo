@@ -30,7 +30,7 @@ export default function Footer() {
           <ul>
             <li><Link to="/quienes-somos">Nosotros</Link></li>
             <li><a href="#">Crédito Empresarial</a></li>
-            <li><a href="#">Proveedores</a></li>
+            <li><Link to="/quienes-somos#proveedores">Proveedores</Link></li>
           </ul>
         </div>
         <div className="f-col">

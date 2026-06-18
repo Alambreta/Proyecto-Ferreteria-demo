@@ -70,7 +70,7 @@ export default function QuienesSomosPage() {
             </figure>
           </div>
 
-          <div className="quienes-block reveal reveal--delay-2">
+          <div id="proveedores" className="quienes-block reveal reveal--delay-2">
             <h2 className="quienes-kicker quienes-kicker--center">Nuestros Proveedores</h2>
             <div className="quienes-providers">
               {[
