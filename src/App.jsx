@@ -12,6 +12,8 @@ import TransportePage from './pages/TransportePage.jsx'
 import MaquinariaPage from './pages/MaquinariaPage.jsx'
 import QuienesSomosPage from './pages/QuienesSomosPage.jsx'
 import ServiciosPage from './pages/ServiciosPage.jsx'
+import PrivacidadPage from './pages/PrivacidadPage.jsx'
+import TerminosPage from './pages/TerminosPage.jsx'
 
 const CART_KEY = 'els_cart_v1'
 const CART_TTL = 5 * 60 * 1000
@@ -91,6 +93,8 @@ export default function App() {
         <Route path="/maquinaria"  element={<MaquinariaPage onAdd={addItem} />} />
         <Route path="/quienes-somos" element={<QuienesSomosPage />} />
         <Route path="/servicios" element={<ServiciosPage />} />
+        <Route path="/privacidad" element={<PrivacidadPage />} />
+        <Route path="/terminos"   element={<TerminosPage />} />
       </Routes>
       <Drawer open={cartOpen} onClose={() => setCartOpen(false)} items={items} setItems={setItems} />
     </>

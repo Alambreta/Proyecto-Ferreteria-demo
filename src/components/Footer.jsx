@@ -29,7 +29,7 @@ export default function Footer() {
           <h5>Empresa</h5>
           <ul>
             <li><Link to="/quienes-somos">Nosotros</Link></li>
-            <li><a href="#">Crédito Empresarial</a></li>
+            <li><a href="https://wa.me/573128502364?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20el%20cr%C3%A9dito%20empresarial." target="_blank" rel="noopener noreferrer">Crédito Empresarial</a></li>
             <li><Link to="/quienes-somos#proveedores">Proveedores</Link></li>
           </ul>
         </div>
@@ -47,9 +47,8 @@ export default function Footer() {
       <div className="footer-bottom">
         <span>© 2026 Los Equipos E.L</span>
         <div className="legal">
-          <a href="#">Aviso de Privacidad</a>
-          <a href="#">Términos</a>
-          <a href="#">Facturación</a>
+          <Link to="/privacidad">Aviso de Privacidad</Link>
+          <Link to="/terminos">Términos y Condiciones</Link>
         </div>
       </div>
     </footer>

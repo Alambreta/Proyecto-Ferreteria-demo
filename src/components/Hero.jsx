@@ -108,7 +108,7 @@ export default function Hero() {
         </div>
         <p className="hero-sub">
           Materiales de obra y renta de equipo especializado. Entrega programada en toda el área
-          departamental. Sin letras chiquitas, sin sobreprecios.
+          departamental. Expertos en agilizar tu obra y mantenerla en marcha.
         </p>
         <div className="hero-actions">
           <Link to="/compras" className="btn btn-red">Ver Compras <I.arrow className="btn-arrow" /></Link>
