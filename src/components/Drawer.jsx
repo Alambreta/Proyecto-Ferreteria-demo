@@ -7,9 +7,7 @@ export default function Drawer({ open, onClose, items, setItems }) {
     document.body.classList.toggle('locked', open)
   }, [open])
 
-  const subtotal = items.reduce((s, i) => s + i.price * i.qty, 0)
-  const iva = subtotal * 0.19
-  const total = subtotal + iva
+  const total = items.reduce((s, i) => s + (i.price ?? 0) * i.qty, 0)
 
   const inc = (id) => setItems(items.map(i => i.id === id ? { ...i, qty: i.qty + 1 } : i))
   const dec = (id) => setItems(
@@ -18,10 +16,18 @@ export default function Drawer({ open, onClose, items, setItems }) {
   const rm = (id) => setItems(items.filter(i => i.id !== id))
 
   const waMsg = encodeURIComponent(
-    'Hola FORJA, me interesa cotizar:\n' +
+    'Hola, me interesa cotizar:\n' +
     items.map(i => `• ${i.qty}× ${i.name} (${i.kind === 'renta' ? 'renta' : 'compra'})`).join('\n') +
-    `\nTotal estimado: $${fmt(total)} COP`
+    `\nTotal estimado: $${fmt(total)} COP (IVA incluido)`
   )
+
+  const handleSend = (e) => {
+    e.preventDefault()
+    if (!items.length) return
+    window.open(`https://wa.me/573128502364?text=${waMsg}`, '_blank', 'noopener,noreferrer')
+    setItems([])
+    onClose()
+  }
 
   return (
     <>
@@ -49,12 +55,15 @@ export default function Drawer({ open, onClose, items, setItems }) {
             return (
               <div className="d-item" key={i.id + i.kind}>
                 <div className="d-thumb">
-                  <Icon />
+                  {i.imagen_url
+                    ? <img src={i.imagen_url} alt={i.name} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '0.25rem' }} />
+                    : <Icon />
+                  }
                   {i.kind === 'renta' && <span className="tag">RENTA</span>}
                 </div>
                 <div>
                   <div className="d-name">{i.name}</div>
-                  <div className="d-meta">{i.sku} · COP ${fmt(i.price)} /{i.unit}</div>
+                  <div className="d-meta">{i.sku} · {i.price != null ? `COP $${fmt(i.price)} /${i.unit}` : 'Consultar precio'}</div>
                   <div className="d-qty">
                     <button onClick={() => dec(i.id)}>−</button>
                     <span>{i.qty}</span>
@@ -62,7 +71,7 @@ export default function Drawer({ open, onClose, items, setItems }) {
                   </div>
                 </div>
                 <div className="d-right">
-                  <div className="d-price">${fmt(i.price * i.qty)}</div>
+                  <div className="d-price">{i.price != null ? `$${fmt(i.price * i.qty)}` : '—'}</div>
                   <button className="d-remove" onClick={() => rm(i.id)}>Quitar</button>
                 </div>
               </div>
@@ -71,8 +80,7 @@ export default function Drawer({ open, onClose, items, setItems }) {
         </div>
 
         <div className="drawer-foot">
-          <div className="d-line"><span>Subtotal</span><span>${fmt(subtotal)}</span></div>
-          <div className="d-line"><span>IVA 19%</span><span>${fmt(iva)}</span></div>
+          <div className="d-line"><span>IVA</span><span>Incluido</span></div>
           <div className="d-line"><span>Envío</span><span>Por cotizar</span></div>
           <div className="d-total">
             <div className="l">TOTAL</div>
@@ -81,9 +89,7 @@ export default function Drawer({ open, onClose, items, setItems }) {
           <a
             className="wa-btn"
             href={items.length ? `https://wa.me/573128502364?text=${waMsg}` : '#'}
-            target="_blank"
-            rel="noreferrer"
-            onClick={e => { if (!items.length) e.preventDefault() }}
+            onClick={handleSend}
             style={items.length ? {} : { opacity: .5, pointerEvents: 'none' }}
           >
             <I.whatsapp /> Enviar pedido por WhatsApp

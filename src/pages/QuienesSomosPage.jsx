@@ -46,6 +46,7 @@ export default function QuienesSomosPage() {
               <blockquote className="owner-quote">
                 "En Los Equipos E.L, tu proyecto es nuestro proyecto."
               </blockquote>
+              <cite className="owner-name">— Claudia Lorena Alvarez Madrid</cite>
             </div>
           </div>
 
@@ -64,13 +65,14 @@ export default function QuienesSomosPage() {
               <blockquote className="owner-quote">
                 "Crecer siendo los mismos: confiables, cercanos y comprometidos."
               </blockquote>
+              <cite className="owner-name">— Edisson Marín Patiño</cite>
             </div>
             <figure className="owner-figure">
               <img src="/material de trabajo/ED-foto.png" alt="Fundador" />
             </figure>
           </div>
 
-          <div className="quienes-block reveal reveal--delay-2">
+          <div id="proveedores" className="quienes-block reveal reveal--delay-2">
             <h2 className="quienes-kicker quienes-kicker--center">Nuestros Proveedores</h2>
             <div className="quienes-providers">
               {[
@@ -82,6 +84,11 @@ export default function QuienesSomosPage() {
                 { src: '/providers/technolavadoos.png',      alt: 'Technolavados' },
                 { src: '/providers/construccionesRC.png',    alt: 'Construcciones RC' },
                 { src: '/providers/logo_losada_munoz.png',   alt: 'Losada Muñoz' },
+                { src: '/providers/logo-angela.png',         alt: 'Angela' },
+                { src: '/providers/logo-pablo.png',          alt: 'Pablo' },
+                { src: '/providers/logo-andamio.png',        alt: 'Andamio' },
+                { src: '/providers/a1979.png',               alt: 'A1979' },
+                { src: '/providers/csilaboral.png',          alt: 'CSI Laboral' },
               ].map(({ src, alt }) => (
                 <div key={src} className="provider-card">
                   <img src={src} alt={alt} />

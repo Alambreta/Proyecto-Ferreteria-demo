@@ -31,6 +31,21 @@ export default function ComprasPage({ onAdd }) {
         loading={loading}
         error={error}
       />
+      <section className="section-pad">
+        <div className="wrap">
+          <div className="servicios-cta">
+            <p>No encontraste lo que buscabas? Pregunte por lo que no vea!</p>
+            <a
+              href="https://wa.me/573128502364"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-red"
+            >
+              Consultanos por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
       <Footer />
     </div>
   )
