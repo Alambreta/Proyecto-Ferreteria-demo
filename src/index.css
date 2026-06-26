@@ -1607,6 +1607,18 @@ button {
   margin-top: 0.25rem;
 }
 
+.owner-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--gray-700);
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
 @media (max-width: 720px) {
   .owner-card {
     grid-template-columns: 1fr;
@@ -1641,7 +1653,7 @@ button {
 }
 
 .provider-card {
-  flex: 0 0 calc(25% - 0.75rem);
+  flex: 0 0 calc(20% - 0.8rem);
 }
 
 .provider-card {
@@ -1675,8 +1687,10 @@ button {
   filter: grayscale(0) opacity(1);
 }
 
-.provider-card:nth-last-child(-n+3) img {
-  max-height: 5rem;
+@media (max-width: 960px) {
+  .provider-card {
+    flex: 0 0 calc(33.333% - 0.667rem);
+  }
 }
 
 @media (max-width: 720px) {

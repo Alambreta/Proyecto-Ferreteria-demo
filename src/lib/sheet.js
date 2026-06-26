@@ -37,7 +37,20 @@ function resolveIcon(sku = '') {
   return ICON_MAP[sku.slice(0, 7)] || ICON_MAP[sku.slice(0, 3)] || 'block'
 }
 
-function driveImageUrl(raw) {
+// Precios en COP. Acepta cualquier formato que el cliente escriba en el Sheet:
+// "15000", "15.000", "1.000.000", "$ 1.500.000 COP" → todos quedan como entero.
+// Los puntos/comas de miles se descartan (el peso colombiano no usa centavos).
+// "Consultar", vacío o texto no numérico → null.
+export function parsePrice(raw) {
+  if (raw == null) return null
+  const str = String(raw).trim()
+  if (!str || str === 'Consultar') return null
+  const digits = str.replace(/[^\d]/g, '')
+  if (!digits) return null
+  return Number(digits)
+}
+
+export function driveImageUrl(raw) {
   if (!raw) return null
   const match = raw.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || raw.match(/[?&]id=([a-zA-Z0-9_-]+)/)
   if (match) {
@@ -47,7 +60,7 @@ function driveImageUrl(raw) {
   return raw
 }
 
-function parseCSV(text) {
+export function parseCSV(text) {
   const rows = []
   let row = []
   let field = ''
@@ -79,7 +92,7 @@ function parseCSV(text) {
     }
     i++
   }
-  if (row.length) { row.push(field); if (row.some(f => f)) rows.push(row) }
+  if (field !== '' || row.length) { row.push(field); if (row.some(f => f)) rows.push(row) }
   return rows
 }
 
@@ -94,7 +107,7 @@ function toObjects(text) {
 function rowToProduct(row, i) {
   const isRenta = row.Tipo === 'Alquiler'
   const rawPrice = isRenta ? row.Precio_Dia_COP : row.Precio_Venta_COP
-  const price = rawPrice && rawPrice !== 'Consultar' ? Number(rawPrice) : null
+  const price = parsePrice(rawPrice)
 
   return {
     id:        row.SKU || `row-${i}`,
