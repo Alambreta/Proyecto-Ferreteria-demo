@@ -89,6 +89,7 @@ export default function QuienesSomosPage() {
                 { src: '/providers/logo-andamio.png',        alt: 'Andamio' },
                 { src: '/providers/a1979.png',               alt: 'A1979' },
                 { src: '/providers/csilaboral.png',          alt: 'CSI Laboral' },
+                { src: '/providers/LeonadLV.png',            alt: 'Leonard LV' },
               ].map(({ src, alt }) => (
                 <div key={src} className="provider-card">
                   <img src={src} alt={alt} />
