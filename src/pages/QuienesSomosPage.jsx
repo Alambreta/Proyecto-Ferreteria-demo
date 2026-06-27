@@ -73,7 +73,7 @@ export default function QuienesSomosPage() {
           </div>
 
           <div id="proveedores" className="quienes-block reveal reveal--delay-2">
-            <h2 className="quienes-kicker quienes-kicker--center">Nuestros Proveedores</h2>
+            <h2 className="quienes-kicker quienes-kicker--center">Nuestros Aliados</h2>
             <div className="quienes-providers">
               {[
                 { src: '/providers/NEW_PINTUCO.png',         alt: 'Pintuco' },
