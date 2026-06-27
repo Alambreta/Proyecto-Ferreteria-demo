@@ -30,7 +30,7 @@ export default function Footer() {
           <ul>
             <li><Link to="/quienes-somos">Nosotros</Link></li>
             <li><a href="https://wa.me/573128502364?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20el%20cr%C3%A9dito%20empresarial." target="_blank" rel="noopener noreferrer">Crédito Empresarial</a></li>
-            <li><Link to="/quienes-somos#proveedores">Proveedores</Link></li>
+            <li><Link to="/quienes-somos#proveedores">Aliados</Link></li>
           </ul>
         </div>
         <div className="f-col">
